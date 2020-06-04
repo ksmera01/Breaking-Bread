@@ -57,4 +57,4 @@ module.exports = function (sequelize, DataTypes) {
     return Suppliers;
 };
 
-module.exports = Suppliers;
+

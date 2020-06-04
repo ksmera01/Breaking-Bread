@@ -41,8 +41,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     // Syncs with DB
-    Inventory.sync();
-    return Inventory;
+    Transactions.sync();
+    return Transactions;
 };
 
 
