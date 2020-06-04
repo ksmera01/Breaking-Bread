@@ -50,5 +50,3 @@ module.exports = function (sequelize, DataTypes) {
     Inventory.sync();
     return Inventory;
 };
-
-module.exports = Inventory;

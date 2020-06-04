@@ -49,4 +49,4 @@ module.exports = function (sequelize, DataTypes) {
     return Requests;
 };
 
-module.exports = Requests;
+
