@@ -32,6 +32,5 @@ module.exports = function(app) {
     
       res.render("suppliers");
     });
- 
 
 };
