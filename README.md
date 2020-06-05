@@ -30,17 +30,17 @@ As the coronavirus spreads, millions of Americans are out of work and in need of
 ## Usage <a name="usage"></a>
 
 ### Food Suppliers
-..* Create an membership account/log in
-..* Add member general and contact information
-..* Add donations to database: food type, description, amount
-..* View a list of requests from Food Banks
+* Create an membership account/log in
+* Add member general and contact information
+* Add donations to database: food type, description, amount
+* View a list of requests from Food Banks
 
 ### Food Banks
-..* Create an membership account/log in
-..* Add member general and contact information
-..* View food inventory
-..* Claim items from food inventory
-..* Request items not in inventory
+* Create an membership account/log in
+* Add member general and contact information
+* View food inventory
+* Claim items from food inventory
+* Request items not in inventory
 
 ------------------
 ## Screenshots <a name="screenshots"></a>
@@ -49,12 +49,12 @@ As the coronavirus spreads, millions of Americans are out of work and in need of
 ------------------
 ## Technologies <a name="technologies"></a>
 
-..* Express
-..* Passport
-..* MySQL
-..* Sequelize
-..* HandleBars
-..* Bootstrap
+* Express
+* Passport
+* MySQL
+* Sequelize
+* HandleBars
+* Bootstrap
 
 ------------------
 ## Setup <a name="setup"></a>
