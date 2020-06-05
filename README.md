@@ -84,4 +84,4 @@ Project is: in progress.
 ------------------
 ## Credits <a name="credits"></a>
 
-© 2020 Josh Benjamin, Esther N, Ryan Parker, Kevin Smeraglio
+© 2020 Josh Benjamin, Esther Ng, Ryan Parker, Kevin Smeraglio
