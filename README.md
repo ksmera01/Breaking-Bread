@@ -64,16 +64,16 @@ Describe how to install / setup your local environment / add link to demo versio
 ------------------
 ## Links <a name="links"></a>
 
-..* heroku:
-..* github: [https://github.com/ksmera01/Breaking-Bread](https://github.com/ksmera01/Breaking-Bread)
+* heroku:
+* github: [https://github.com/ksmera01/Breaking-Bread](https://github.com/ksmera01/Breaking-Bread)
 
 ------------------
 ## To-do list (future additions): <a name="todo"></a>
 
-..* Search/ filter requests (by location/ amount/ food type etc.)
-..* Add info on delivery/pickup preferences, distance radius, accept EBT/ WIC/ SNAP, tax identification number
-..* View map of requests
-..* Use Yelp API to calculate charities' distance
+* Search/ filter requests (by location/ amount/ food type etc.)
+* Add info on delivery/pickup preferences, distance radius, accept EBT/ WIC/ SNAP, tax identification number
+* View map of requests
+* Use Yelp API to calculate charities' distance
 
 ------------------
 ## Status <a name="status"></a>
