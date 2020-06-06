@@ -1,0 +1,9 @@
+<li>
+	{{name}}
+
+	<button class="change-request" data-id="{{id}}" data-requestMet="{{requestMet}}">
+		{{#if requestMet}}Need Has Been Met{{else}}Need Still Exists{{/if}}
+	</button>
+
+	<button class="delete-item" data-id="{{this.id}}">Fulfill This Need</button>
+</li>

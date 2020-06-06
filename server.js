@@ -11,6 +11,24 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+
+// //============TOGGLE SWITCH SUPPLIER/CHARITY AND STYLES  
+// var themeSwitcher = document.querySelector("#theme-switcher");
+// var container = document.querySelector(".container");
+// var mode = "dark";
+
+// themeSwitcher.addEventListener("click", function() { //available via DOM API; add event to this HTML id
+//   if (mode === "dark") {
+//     mode = "light";
+//     container.setAttribute("class", "light");
+//   }
+//   else {
+//     mode = "dark";
+//     container.setAttribute("class", "dark");
+//   }
+// });
+// //========================
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -33,4 +51,5 @@ db.sequelize.sync().then(function () {
         // Log (server-side) when our server has started
         console.log("Server listening on: http://localhost:" + PORT);
       });
+});
 
