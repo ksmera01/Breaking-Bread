@@ -21,6 +21,12 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+
+        //line1: Sequelize.STRING,
+        //line2: Sequelize.STRING,
+        //city: Sequelize.STRING,
+        //state: Sequelize.STRING,
+        //zip: Sequelize.STRING,
         s_contactName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -52,8 +58,23 @@ module.exports = function (sequelize, DataTypes) {
         freezeTableName: true
     });
 
-    // Syncs with DB
-    Suppliers.sync();
+    // Associate Suppliers with Inventory inputs
+    // a supplier can have many inventory inputs
+    Suppliers.associate = function (models) {
+        Suppliers.hasMany(models.Inventory, {
+            // when a supplier is deleted, also delete any associated inventory inputs
+            onDelete: "cascade"
+        });
+    };
+
+    // Suppliers can have many transactions, transactions belongs to suppliers
+    Suppliers.associate = function (models) {
+        Suppliers.hasMany(models.Transactions, {
+            // when a supplier is deleted, also delete any associated transactions
+            onDelete: "cascade"
+        });
+    };
+
     return Suppliers;
 };
 

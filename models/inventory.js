@@ -26,27 +26,24 @@ module.exports = function (sequelize, DataTypes) {
         },
         dateExp: {
             type: DataTypes.DATE,
-        },
-        suppName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        suppID: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
         }
     }, {
         // disable the modification of tablenames
         freezeTableName: true
     });
 
-    // Syncs with DB
-    Inventory.sync();
+    // associate inventory inputs with suppliers
+    Inventory.associate = function (models) {
+        // inventory input cannot be created without a supplier due to foreign key constraint
+        Inventory.belongsTo(models.Suppliers, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
     return Inventory;
 };
+
+
+
