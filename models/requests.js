@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const Requests = sequelize.define("Request", {
+    const Requests = sequelize.define("Requests", {
         r_itemCat: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -24,28 +24,29 @@ module.exports = function (sequelize, DataTypes) {
 
         dateNeeded: {
             type: DataTypes.DATE,
-        },
-        charName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        charID: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
         }
     }, {
         // disable the modification of tablenames
         freezeTableName: true
     });
 
-    // Syncs with DB
-    Requests.sync();
+    // associate requests with charities
+    Requests.associate = function (models) {
+        // requests cannot be created without a charity due to foreign key constraint
+        Requests.belongsTo(models.Charities, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
+    Requests.associate = function (models) {
+        Requests.hasMany(models.Transactions, {
+            // when a request is deleted, also delete any associated transactions
+            onDelete: "cascade"
+        });
+    };
+
     return Requests;
 };
 
