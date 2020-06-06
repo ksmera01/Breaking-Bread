@@ -11,6 +11,7 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -34,3 +35,4 @@ db.sequelize.sync().then(function () {
     console.log("Server listening on: http://localhost:" + PORT);
   });
 });
+
