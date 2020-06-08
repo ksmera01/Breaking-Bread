@@ -9,11 +9,11 @@ var request = require("../models/requests.js");
 router.get("/", function(req, res) {
   request.all(function(data) {
       //below links to requesters.handlebars
-    var requestersObject = {
+    var reqstrObject = {
       request: data
     };
-    console.log(requestersObject);
-    res.render("index", requestersObject);
+    console.log(reqstrObject);
+    res.render("index", reqstrObject);
   });
 });
 
