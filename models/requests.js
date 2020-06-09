@@ -21,9 +21,9 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-
-        dateNeeded: {
-            type: DataTypes.DATE,
+        fulfilled: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
         }
     }, {
         // disable the modification of tablenames
@@ -38,9 +38,9 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
-    };
+        // };
 
-    Requests.associate = function (models) {
+        // Requests.associate = function (models) {
         Requests.hasMany(models.Transactions, {
             // when a request is deleted, also delete any associated transactions
             onDelete: "cascade"

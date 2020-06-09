@@ -14,30 +14,30 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
-    };
+        // };
 
-    // Transactions - belongsTo - Suppliers, Suppliers - hasMany - Transactions
-    Transactions.associate = function (models) {
+        // Transactions - belongsTo - Suppliers, Suppliers - hasMany - Transactions
+        // Transactions.associate = function (models) {
         // transactions cannot be created without a supplier due to foreign key constraint
         Transactions.belongsTo(models.Suppliers, {
             foreignKey: {
                 allowNull: false
             }
         });
-    };
+        //  };
 
-    // Transactions - belongsTo - Requests, Requests - hasOne - Transactions (one request can only have one transaction)
-    Transactions.associate = function (models) {
+        // Transactions - belongsTo - Requests, Requests - hasOne - Transactions (one request can only have one transaction)
+        // Transactions.associate = function (models) {
         // transactions can be created without requestId
         Transactions.belongsTo(models.Requests, {
             foreignKey: {
                 allowNull: true
             }
         });
-    };
+        //  };
 
-    // Transactions - belongsTo - Inventory, Inventory - hasOne - Transactions (one inventory food item can only have one transaction)
-    Transactions.associate = function (models) {
+        // Transactions - belongsTo - Inventory, Inventory - hasOne - Transactions (one inventory food item can only have one transaction)
+        // Transactions.associate = function (models) {
         // transactions can be created without requestId
         Transactions.belongsTo(models.Inventory, {
             foreignKey: {

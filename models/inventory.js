@@ -21,11 +21,9 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        perishable: {
+        claimed: {
             type: DataTypes.BOOLEAN,
-        },
-        dateExp: {
-            type: DataTypes.DATE,
+            allowNull: false
         }
     }, {
         // disable the modification of tablenames

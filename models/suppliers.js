@@ -48,11 +48,7 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1],
                 isEmail: true,
             }
-        },
-        s_EBT: {
-            type: DataTypes.BOOLEAN
         }
-
     }, {
         // disable the modification of tablenames
         freezeTableName: true
@@ -65,13 +61,19 @@ module.exports = function (sequelize, DataTypes) {
             // when a supplier is deleted, also delete any associated inventory inputs
             onDelete: "cascade"
         });
-    };
+        //   };
 
-    // Suppliers can have many transactions, transactions belongs to suppliers
-    Suppliers.associate = function (models) {
+        // Suppliers can have many transactions, transactions belongs to suppliers
+        // Suppliers.associate = function (models) {
         Suppliers.hasMany(models.Transactions, {
             // when a supplier is deleted, also delete any associated transactions
             onDelete: "cascade"
+        });
+
+        Suppliers.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
         });
     };
 
