@@ -17,8 +17,11 @@ module.exports = function (app) {
       email: req.body.email,
       password: req.body.password
     })
-      .then(function () {
-        res.redirect("members");
+      .then(function (data) {
+        passport.authenticate('local')(req, res, function () {
+          res.redirect('/members');
+      })
+        // res.redirect("members");
       })
       .catch(function (err) {
         res.status(401).json(err);
