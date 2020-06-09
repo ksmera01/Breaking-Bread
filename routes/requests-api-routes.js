@@ -1,9 +1,9 @@
-// Requiring our models and passport as we've configured it
+// Requiring our models  
 const db = require("../models");
 
 module.exports = function (app) {
 
-    app.get("/", async function (req, res) {
+    app.get("/requests", async function (req, res) {
         const requests = await db.Requests.findAll({
             raw: true
         });
@@ -14,7 +14,10 @@ module.exports = function (app) {
 
     // route for retrieving all the requests
     app.get("/api/requests", function (req, res) {
-        res.json(req.user);
+        db.Requests.findAll({})
+            .then(function (dbRequests) {
+                res.json(dbRequests);
+            });
     });
 
     // Get route for retrieving a single request
@@ -39,7 +42,7 @@ module.exports = function (app) {
     });
 
     // DELETE route for deleting requests
-    app.delete("/api/posts/:id", function (req, res) {
+    app.delete("/api/requests/:id", function (req, res) {
         db.Requests.destroy({
             where: {
                 id: req.params.id
@@ -50,7 +53,8 @@ module.exports = function (app) {
     });
 
     // PUT route for updating requests
-    app.put("/api/posts", function (req, res) {
+    app.put("/api/requests/:id", function (req, res) {
+
         db.Requests.update(
             req.body,
             {

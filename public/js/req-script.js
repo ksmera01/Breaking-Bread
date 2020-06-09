@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
 
-    $("#fulfill-btn").on("click", function (event) {
+    $(".fulfill-btn").on("click", function (event) {
         //see button - grab data-id 
         const id = $(this).data("id");
 
         const fulfilledState = {
-            fufilled: true
+            fulfilled: true
         }
 
         // Send the PUT request to update request to fulfilled when fulfill button is clicked
