@@ -12,13 +12,13 @@ module.exports = function (app) {
   });
 
   // Route for signing up a user. 
-  app.post("api/signup", function (req, res) {
+  app.post("/api/signup", function (req, res) {
     db.User.create({
       email: req.body.email,
       password: req.body.password
     })
       .then(function () {
-        res.redirect("api/login");
+        res.redirect("members");
       })
       .catch(function (err) {
         res.status(401).json(err);
@@ -28,7 +28,7 @@ module.exports = function (app) {
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
-    res.render("/");
+    res.render("login");
   });
 
   // Route for getting some data about our user to be used client side
