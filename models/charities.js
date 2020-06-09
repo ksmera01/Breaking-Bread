@@ -44,9 +44,6 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1],
                 isEmail: true
             }
-        },
-        c_EBT: {
-            type: DataTypes.BOOLEAN
         }
 
     }, {
@@ -61,13 +58,15 @@ module.exports = function (sequelize, DataTypes) {
             // when a charity is deleted, also delete any associated requests
             onDelete: "cascade"
         });
-    };
-
-    // Charities can have many transactions, transactions belongs to charities
-    Charities.associate = function (models) {
         Charities.hasMany(models.Transactions, {
             // when a charity is deleted, also delete any associated transactions
             onDelete: "cascade"
+        });
+        // requests cannot be created without a charity due to foreign key constraint
+        Charities.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
         });
     };
 

@@ -25,11 +25,13 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+//require("./routes/html-routes.js")(app);
+//require("./routes/api-routes.js")(app);
+//require("./routes/charities-api-routes.js")(app);
+require("./routes/requests-api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(function () {
+db.sequelize.sync({}).then(function () {
   app.listen(PORT, function () {
     // Log (server-side) when our server has started
     console.log("Server listening on: http://localhost:" + PORT);
