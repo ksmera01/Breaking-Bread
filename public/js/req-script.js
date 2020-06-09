@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    console.log("hi");
 
     $(".fulfill-btn").on("click", function (event) {
         //see button - grab data-id 
@@ -8,6 +8,9 @@ $(document).ready(function () {
         const fulfilledState = {
             fulfilled: true
         }
+
+        console.log(id);
+        console.log(fulfilledState);
 
         // Send the PUT request to update request to fulfilled when fulfill button is clicked
         $.ajax("/api/requests/" + id, {
@@ -28,7 +31,7 @@ $(document).ready(function () {
 
         const newRequest = {
             r_itemCat: $("#r-cat").val(),
-            r_item: $("r-food").val().trim(),
+            r_item: $("#r-food").val().trim(),
             r_amount: $("#r-amount").val().trim(),
         };
 
