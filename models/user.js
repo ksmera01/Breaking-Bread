@@ -16,6 +16,26 @@ module.exports = function (sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    orgType: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    orgName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    orgAdd: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    contactName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    contactPhone: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
 
@@ -24,7 +44,6 @@ module.exports = function (sequelize, DataTypes) {
       onDelete: "cascade"
     });
     // };
-
 
     // User.associate = function (models) {
     User.hasMany(models.Suppliers, {
