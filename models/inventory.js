@@ -38,10 +38,15 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
+
+        //for charities that claim inventory
+        Inventory.belongsTo(models.Charities, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
     };
 
     return Inventory;
+
 };
-
-
-

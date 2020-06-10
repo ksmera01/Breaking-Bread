@@ -2,13 +2,7 @@
 
 module.exports = function (sequelize, DataTypes) {
     const Charities = sequelize.define("Charities", {
-        charType: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
+
         charName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -58,10 +52,10 @@ module.exports = function (sequelize, DataTypes) {
             // when a charity is deleted, also delete any associated requests
             onDelete: "cascade"
         });
-        Charities.hasMany(models.Transactions, {
-            // when a charity is deleted, also delete any associated transactions
-            onDelete: "cascade"
-        });
+
+        //Charities can have many CLAIMED INVENTORY, CLAIMED INVENTORY items belongs to Charities
+        Charities.hasMany(models.Inventory, {});
+
         // requests cannot be created without a charity due to foreign key constraint
         Charities.belongsTo(models.User, {
             foreignKey: {
