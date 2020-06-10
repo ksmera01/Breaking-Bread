@@ -12,11 +12,29 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="password-input" placeholder="Password">
                 </div>
-                {{!-- =====POSSIBLE TOGGLE SWITCH FOR SUPPLIER/REQUESTER HERE? --}}
-                {{!-- <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="password-input" placeholder="Password">
-                </div> --}}
+                <div class="form-group">
+                    <label for="sel1">Organization Type:</label>
+                    <select class="form-control" id="orgType-input">
+                        <option>Supplier</option>
+                        <option>Requester</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Organization Name</label>
+                    <input type="input" class="form-control" id="orgName-input" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Address</label>
+                    <input type="input" class="form-control" id="orgAdd-input" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contact Name</label>
+                    <input type="input" class="form-control" id="contactName-input" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contact Phone</label>
+                    <input type="input" class="form-control" id="contactPhone-input" placeholder="">
+                </div>
                 <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span> <span class="msg"></span>
