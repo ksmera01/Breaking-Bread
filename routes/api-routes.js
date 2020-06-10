@@ -15,15 +15,20 @@ module.exports = function (app) {
   app.post("/api/signup", function (req, res) {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      orgType: req.body.orgType,
+      orgName: req.body.orgName,
+      orgAdd: req.body.orgAdd,
+      contactName: req.body.contactName,
+      contactPhone: req.body.contactPhone
     })
       .then(function (data) {
         passport.authenticate('local')(req, res, function () {
           res.redirect('/members');
-      })
-        // res.redirect("members");
+        })
       })
       .catch(function (err) {
+        console.error(err)
         res.status(401).json(err);
       });
   });

@@ -16,6 +16,26 @@ module.exports = function (sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    orgType: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    orgName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    orgAdd: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    contactName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    contactPhone: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
 
