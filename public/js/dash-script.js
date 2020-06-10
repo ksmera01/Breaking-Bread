@@ -25,6 +25,51 @@ $(document).ready(function () {
         );
     });
 
+    $(".claim-btn").on("click", function (event) {
+        //see button - grab data-id 
+        const id = $(this).data("id");
+
+        const claimedState = {
+            claimed: true
+        }
+
+        console.log(id);
+        console.log(claimedState);
+
+        // Send the PUT request to update request to claimed when fulfill button is clicked
+        $.ajax("/api/inventory/" + id, {
+            type: "PUT",
+            data: claimedState
+        }).then(
+            function () {
+                console.log("changed claimed to true");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+    $(".donate-form").on("submit", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        const newInv = {
+            s_itemCat: $("#i-cat").val(),
+            s_item: $("#i-food").val().trim(),
+            s_amount: $("#i-amount").val().trim(),
+        };
+
+        // Send the POST request to inventory
+        $.ajax("/api/inventory", {
+            type: "POST",
+            data: newInv
+        }).then(function () {
+            console.log(`added new inventory: ${newInv}`);
+            // Reload the page to get the updated list
+            location.reload();
+        });
+    });
+
     $(".req-form").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();

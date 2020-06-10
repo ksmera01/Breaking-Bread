@@ -1,0 +1,94 @@
+<script src='/js/dash-script.js'></script>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-2 col-sm-2">
+            <a class="btn btn-light" href="/">See all Transactions</a>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <a class="btn btn-light" href="/">See Inventory</a>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <a class="btn btn-light" href="/">Update Account Info</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="author-container">
+                <h1>What people are asking for</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th scope="col">Food Item</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Requested By (ID)</th>
+                            <th scope="col">Date Created</th>
+                            <th scope="col">Fulfill</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each request}}
+                        {{#unless fulfilled}}
+                        <tr>
+
+                            <td>{{this.r_item}}</td>
+                            <td>{{this.r_amount}}</td>
+                            <td>{{this.r_itemCat}}</td>
+                            <td>{{this.CharityId}}</td>
+                            <td>{{this.createdAt}}</td>
+                            <td>{{> fulfill}} </td>
+
+                        </tr>
+                        {{/unless}}
+                        {{/each}}
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+            <h1>What would you like to donate?</h1>
+            <form class="donate-form">
+                <div class="form-group">
+                    <label for="food">Food Item:</label>
+                    <input placeholder="marinara sauce" type="text" class="form-control" id="i-food">
+                    <br />
+                    <label for="amount">Amount:</label>
+                    <input placeholder="5" type="text" class="form-control" id="i-amount">
+                    <br />
+                    <div class="form-group">
+                        <label for="category">Select Category:</label>
+                        <select class="custom-select" id="i-cat">
+
+                            <option selected>Choose...</option>
+                            <option>Whole grains, Rice, Oats, Cereals, Pasta</option>
+                            <option>Canned fruits/vegetables</option>
+                            <option>Canned fish</option>
+                            <option>Canned meats</option>
+                            <option>Canned soups/ stews/ chili</option>
+                            <option>Canned Legumes</option>
+                            <option>Pureed foods and sauces</option>
+                            <option>Cooking oils</option>
+                            <option>Powdered/ Shelf-stable milk/ non-dairy milk</option>
+                            <option>Flour</option>
+                            <option>Dried herbs and spices</option>
+                            <option>Dried fruits</option>
+                            <option>Crackers</option>
+                            <option>Granola, Muesli, Trail Mix, Seeds</option>
+                            <option>Unsalted nuts</option>
+                            <option>Nut butters</option>
+                            <option>Shelf-stable fruit juices</option>
+                            <option>Natural sweeteners</option>
+                        </select>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-success" id="add-req-btn">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     orgAdd: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     contactName: {
@@ -34,19 +34,19 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     contactPhone: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   });
 
   User.associate = function (models) {
-    User.hasMany(models.Charities, {
+    User.hasOne(models.Charities, {
       onDelete: "cascade"
     });
     // };
 
     // User.associate = function (models) {
-    User.hasMany(models.Suppliers, {
+    User.hasOne(models.Suppliers, {
       onDelete: "cascade"
     });
   };
