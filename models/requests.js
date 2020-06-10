@@ -41,9 +41,12 @@ module.exports = function (sequelize, DataTypes) {
         // };
 
         // Requests.associate = function (models) {
-        Requests.hasMany(models.Transactions, {
-            // when a request is deleted, also delete any associated transactions
-            onDelete: "cascade"
+
+        //for suppliers who fulfill requests
+        Requests.belongsTo(models.Suppliers, {
+            foreignKey: {
+                allowNull: false
+            }
         });
     };
 

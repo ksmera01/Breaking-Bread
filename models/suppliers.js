@@ -1,12 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
     const Suppliers = sequelize.define("Suppliers", {
-        suppType: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
         suppName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -63,12 +56,11 @@ module.exports = function (sequelize, DataTypes) {
         });
         //   };
 
-        // Suppliers can have many transactions, transactions belongs to suppliers
+
         // Suppliers.associate = function (models) {
-        Suppliers.hasMany(models.Transactions, {
-            // when a supplier is deleted, also delete any associated transactions
-            onDelete: "cascade"
-        });
+
+        // Suppliers can FULFILL many Requests, FULFILLED REQUESTS belongs to suppliers
+        Suppliers.hasMany(models.Requests, {});
 
         Suppliers.belongsTo(models.User, {
             foreignKey: {
