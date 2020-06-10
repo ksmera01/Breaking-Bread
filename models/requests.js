@@ -23,7 +23,8 @@ module.exports = function (sequelize, DataTypes) {
         },
         fulfilled: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: false
         }
     }, {
         // disable the modification of tablenames
@@ -35,7 +36,7 @@ module.exports = function (sequelize, DataTypes) {
         // requests cannot be created without a charity due to foreign key constraint
         Requests.belongsTo(models.Charities, {
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         });
         // };
@@ -45,7 +46,7 @@ module.exports = function (sequelize, DataTypes) {
         //for suppliers who fulfill requests
         Requests.belongsTo(models.Suppliers, {
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         });
     };

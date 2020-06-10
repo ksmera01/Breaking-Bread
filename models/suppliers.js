@@ -62,11 +62,11 @@ module.exports = function (sequelize, DataTypes) {
         // Suppliers can FULFILL many Requests, FULFILLED REQUESTS belongs to suppliers
         Suppliers.hasMany(models.Requests, {});
 
-        Suppliers.belongsTo(models.User, {
+        /*Suppliers.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             }
-        });
+        });*/
     };
 
     return Suppliers;

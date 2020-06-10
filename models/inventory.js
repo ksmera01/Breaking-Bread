@@ -23,7 +23,8 @@ module.exports = function (sequelize, DataTypes) {
         },
         claimed: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: false
         }
     }, {
         // disable the modification of tablenames
@@ -35,18 +36,17 @@ module.exports = function (sequelize, DataTypes) {
         // inventory input cannot be created without a supplier due to foreign key constraint
         Inventory.belongsTo(models.Suppliers, {
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         });
 
         //for charities that claim inventory
         Inventory.belongsTo(models.Charities, {
             foreignKey: {
-                allowNull: false
+                allowNull: true
             }
         });
     };
 
     return Inventory;
-
 };

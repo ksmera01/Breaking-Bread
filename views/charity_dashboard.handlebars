@@ -1,0 +1,94 @@
+<script src='/js/dash-script.js'></script>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-2 col-sm-2">
+            <a class="btn btn-light" href="/">See all Transactions</a>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <a class="btn btn-light" href="/">See all Rquests</a>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <a class="btn btn-light" href="/">Update Account Info</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="author-container">
+                <h1>Food available</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th scope="col">Food Item</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Donated By (ID)</th>
+                            <th scope="col">Date Created</th>
+                            <th scope="col">Claim</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each inventory}}
+                        {{#unless claimed}}
+                        <tr>
+
+                            <td>{{this.s_item}}</td>
+                            <td>{{this.s_amount}}</td>
+                            <td>{{this.s_itemCat}}</td>
+                            <td>{{this.SupplierId}}</td>
+                            <td>{{this.createdAt}}</td>
+                            <td>{{> claim}} </td>
+
+                        </tr>
+                        {{/unless}}
+                        {{/each}}
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+            <h1>What would you like to request?</h1>
+            <form class="req-form">
+                <div class="form-group">
+                    <label for="r-food">Food Item:</label>
+                    <input placeholder="applesauce" type="text" class="form-control" id="r-food">
+                    <br />
+                    <label for="r-amount">Amount:</label>
+                    <input placeholder="12" type="text" class="form-control" id="r-amount">
+                    <br />
+                    <div class="form-group">
+                        <label for="category">Select Category:</label>
+                        <select class="custom-select" id="r-cat">
+
+                            <option selected>Choose...</option>
+                            <option>Whole grains, Rice, Oats, Cereals, Pasta</option>
+                            <option>Canned fruits/vegetables</option>
+                            <option>Canned fish</option>
+                            <option>Canned meats</option>
+                            <option>Canned soups/ stews/ chili</option>
+                            <option>Canned Legumes</option>
+                            <option>Pureed foods and sauces</option>
+                            <option>Cooking oils</option>
+                            <option>Powdered/ Shelf-stable milk/ non-dairy milk</option>
+                            <option>Flour</option>
+                            <option>Dried herbs and spices</option>
+                            <option>Dried fruits</option>
+                            <option>Crackers</option>
+                            <option>Granola, Muesli, Trail Mix, Seeds</option>
+                            <option>Unsalted nuts</option>
+                            <option>Nut butters</option>
+                            <option>Shelf-stable fruit juices</option>
+                            <option>Natural sweeteners</option>
+                        </select>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-success" id="add-req-btn">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

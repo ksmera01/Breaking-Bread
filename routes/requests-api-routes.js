@@ -8,7 +8,7 @@ module.exports = function (app) {
             raw: true
         });
         console.log(requests);
-        res.render("dashboard", { request: requests });
+        res.render("supplier_dashboard", { request: requests });
 
     });
 
@@ -54,9 +54,30 @@ module.exports = function (app) {
 
     // PUT route for updating requests
     app.put("/api/requests/:id", function (req, res) {
+        /*db.User.findOne({
+            id: req.user.id
+        }, {
+            include: [db.Supplier]
+        })
+            .then(function(user){
+                console.log(user.Supplier.id);
+                req.body.SupplierId = user.Supplier.id
+                 db.Requests.update(
+                    req.body, //id, fulfilled etc.
+                    {
+                        where: {
+                            id: req.params.id
+                        }
+                    }).then(function (dbRequests) {
+                        res.json(dbRequests);
+                    });
+            });*/
 
+        // 1. query the user table, for the specific
+        // 2. include the supplier
+        // 3. use the supplier id to update request
         db.Requests.update(
-            req.body,
+            req.body, //id, fulfilled etc.
             {
                 where: {
                     id: req.params.id

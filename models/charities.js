@@ -57,11 +57,11 @@ module.exports = function (sequelize, DataTypes) {
         Charities.hasMany(models.Inventory, {});
 
         // requests cannot be created without a charity due to foreign key constraint
-        Charities.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
+        /* Charities.belongsTo(models.User, {
+             foreignKey: {
+                 allowNull: false
+             }
+         });*/
     };
 
     return Charities;
