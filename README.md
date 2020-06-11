@@ -52,16 +52,17 @@ With those thoughts and questions in mind, we have developed this web applicatio
 ------------------
 ## Screenshots <a name="screenshots"></a>
 First Page: 
-![alt text](https://github.com/ksmera01/Breaking-Bread/public/images/screenshots-breaking-bread_0001.jpg "First Page")
+![image description](./public/images/screenshots-breaking-bread_0001.jpg)
 
 Login: 
-![alt text](https://github.com/ksmera01/Breaking-Bread/public/images/screenshots-breaking-bread_0002.jpg "Login")
+![image description](./public/images/screenshots-breaking-bread_0002.jpg)
 
 Supplier Donations: 
-![alt text](https://github.com/ksmera01/Breaking-Bread/public/images/screenshots-breaking-bread_0000.jpg "Supplier Donations")
+![image description](./public/images/screenshots-breaking-bread_0000.jpg)
 
 Charity Requests: 
-![alt text](https://github.com/ksmera01/Breaking-Bread/public/images/screenshots-breaking-bread_0003.jpg "Charity Requests")
+![image description](./public/images/screenshots-breaking-bread_0003.jpg)
+
 ------------------
 ## Technologies <a name="technologies"></a>
 
