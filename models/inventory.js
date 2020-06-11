@@ -25,6 +25,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
+        },
+        claimedBy: {
+            type: DataTypes.UUID
         }
     }, {
         // disable the modification of tablenames
@@ -34,18 +37,18 @@ module.exports = function (sequelize, DataTypes) {
     // associate inventory inputs with suppliers
     Inventory.associate = function (models) {
         // inventory input cannot be created without a supplier due to foreign key constraint
-        Inventory.belongsTo(models.Suppliers, {
+        Inventory.belongsTo(models.User, {
             foreignKey: {
                 allowNull: true
             }
         });
-
-        //for charities that claim inventory
-        Inventory.belongsTo(models.Charities, {
-            foreignKey: {
-                allowNull: true
-            }
-        });
+        /*
+                //for charities that claim inventory
+                Inventory.belongsTo(models.Charities, {
+                    foreignKey: {
+                        allowNull: true
+                    }
+                }); */
     };
 
     return Inventory;
