@@ -11,9 +11,25 @@ module.exports = function (app) {
     res.json(req.user);
   });
 
+  //db.requests.findOneandupdate - find request with id, update field - claimedby with current user
+
   // Route for signing up a user. 
-  app.post("/api/signup", function (req, res) {
-    db.User.create({
+  /* app.post("/api/signup", function (req, res) {
+     db.User.create({
+       email: req.body.email,
+       password: req.body.password,
+       orgType: req.body.orgType,
+       orgName: req.body.orgName,
+       orgAdd: req.body.orgAdd,
+       contactName: req.body.contactName,
+       contactPhone: req.body.contactPhone
+     })
+       .then(function (data) {*/
+
+  app.post("/api/signup", async (req, res) => {
+    const user = req.body;
+    //if (req.body.orgType == "Supplier") {
+    const new_user = await db.User.create({
       email: req.body.email,
       password: req.body.password,
       orgType: req.body.orgType,
@@ -21,12 +37,15 @@ module.exports = function (app) {
       orgAdd: req.body.orgAdd,
       contactName: req.body.contactName,
       contactPhone: req.body.contactPhone
+    }).catch(err => {
+      console.log(err)
     })
-      .then(function (data) {
-        passport.authenticate('local')(req, res, function () {
-          res.redirect('/members');
-        })
-      })
+
+    passport.authenticate('local')(req, res, function () {
+      //if statement based on org type data.orgType - res.redirect()
+      // res.redirect('/members');
+      res.json(new_user);
+    })
       .catch(function (err) {
         console.error(err)
         res.status(401).json(err);
