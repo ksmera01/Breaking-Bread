@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     orgAdd: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
     contactName: {
@@ -34,7 +34,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     contactPhone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     }
   });
