@@ -12,43 +12,71 @@ html {
   padding:0px;
   }
 
+  body {
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    text-align: center;
+    background: #e7f1fb;
+    color: #472b02;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-family: 'Comfortaa', cursive;
+    color: #472b02;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-family: 'Comfortaa', cursive;
+    color: #472b02;
+    font-size: 20px;
+  }
+
+ /* ==========login page ========================= */
+
 .main {
-  width: 100vw;
+  width: 102vw;
   height: 100vh;
-  margin: 0;
  background-color: #f6eecbff;
 }
 
-.scroll {
+.scroll-down-text {
   color: #90b7df;
+  padding-bottom: 50px;
 }
 .scroll-down {
   background-color: #e7f1fb;
-  padding: 30px;
+  padding-top: 30px;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  justify-content: center;
-  text-align: center;
-  background: #e7f1fb;
-  color: #472b02;
-  font-size: 12px;
+.login-container {
+  width: 102vw;
+  height: 102vh;
+  margin: 0;
+ background-color: #e7f1fb;
 }
 
-h1 {
-  font-family: 'Comfortaa', cursive;
-  color: #472b02;
-  font-size: 30px;
-  margin-top: 0px;
-  margin-bottom: 10px;
+.bg {
+  background-image: url("/images/bread-bg.png");
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-h2 {
-  font-family: 'Comfortaa', cursive;
-  color: #472b02;
-  font-size: 20px;
+.breadImg {
+  width: 110px;
+  height: 110px;
 }
+#bb-nav {
+margin:0
+}
+
 
 h1, .foodav {
   margin-bottom: 20px;
@@ -56,20 +84,27 @@ h1, .foodav {
 }
 
 h3 {
-  margin-top: 60px;
+  margin-top: 50px;
+  
   font-family: 'Comfortaa', cursive;
-  font-size: 60px;
-  width: 60vw;
-  height: 60vh;
+  font-size: 50px;
+  width: 65vw;
+  height: 45vh;
   
 }
 
 .login-title {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .table-bg {
   background-color: #f8f9fa;
+}
+
+.footer {
+margin-top: 100px;
+margin-bottom: 30px;
+
 }
 
 .navbar {
