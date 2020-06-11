@@ -1,32 +1,64 @@
 $(document).ready(function () {
     console.log("hi");
 
-    $(".fulfill-btn").on("click", function (event) {
-        //see button - grab data-id 
-        const id = $(this).data("id");
-        const userid = $(this).data("userid");
-        console.log(userid);
+    $.get("/api/user_data").then(function (data) {
+        //console.log(data.id)
+        $(".fulfill-btn").on("click", function (event) {
+            //see button - grab data-id 
+            const id = $(this).data("id");
 
-        const fulfilledState = {
-            fulfilled: true,
-            fulfilledBy: userid
-        }
+            // console.log(userid);
 
-        console.log(id);
-        console.log(fulfilledState);
-
-        // Send the PUT request to update request to fulfilled when fulfill button is clicked
-        $.ajax("/api/requests/" + id, {
-            type: "PUT",
-            data: fulfilledState
-        }).then(
-            function () {
-                console.log("changed fulfilled to true");
-                // Reload the page to get the updated list
-                location.reload();
+            const fulfilledState = {
+                fulfilled: true,
+                fulfilledBy: data.id
             }
-        );
-    });
+
+            // console.log(id);
+            console.log(fulfilledState);
+
+
+            // Send the PUT request to update request to fulfilled when fulfill button is clicked
+            $.ajax("/api/requests/" + id, {
+                type: "PUT",
+                data: fulfilledState
+            }).then(
+                function () {
+                    console.log("changed fulfilled to true");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        });
+    })
+    /*
+        $(".fulfill-btn").on("click", function (event) {
+            //see button - grab data-id 
+            const id = $(this).data("id");
+    
+            console.log(userid);
+    
+            const fulfilledState = {
+                fulfilled: true,
+                fulfilledBy: userid
+            }
+    
+            // console.log(id);
+            console.log(fulfilledState);
+    
+    
+            // Send the PUT request to update request to fulfilled when fulfill button is clicked
+            $.ajax("/api/requests/" + id, {
+                type: "PUT",
+                data: fulfilledState
+            }).then(
+                function () {
+                    console.log("changed fulfilled to true");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        }); */
 
     $(".claim-btn").on("click", function (event) {
         //see button - grab data-id 
