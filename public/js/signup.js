@@ -50,7 +50,14 @@ $(document).ready(function () {
     })
       .then(function (data) {
         console.log(data);
-        window.location.replace("/members");
+        if (data.orgType == "Supplier") {
+          window.location.replace("/requests?id=" + data.id);
+        } else if (data.orgType == "Requester") {
+          window.location.replace("/inventory?id=" + data.id);
+        } else {
+          alert(JSON.stringify(data))
+        }
+        //window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

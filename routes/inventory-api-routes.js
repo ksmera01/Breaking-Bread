@@ -4,11 +4,15 @@ const db = require("../models");
 module.exports = function (app) {
 
     app.get("/inventory", async function (req, res) {
+        console.log("hello");
+        console.log(req)
         const inv = await db.Inventory.findAll({
             raw: true
         });
+        const user = await db.User.findOne(req.params.id)
         console.log(inv);
-        res.render("charity_dashboard", { inventory: inv });
+        console.log(user);
+        res.render("charity_dashboard", { inventory: inv, user: user.dataValues });
 
     });
 

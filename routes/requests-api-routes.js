@@ -7,8 +7,11 @@ module.exports = function (app) {
         const requests = await db.Requests.findAll({
             raw: true
         });
+
+        const user = await db.User.findOne(req.params.id)
         console.log(requests);
-        res.render("supplier_dashboard", { request: requests });
+        console.log(user);
+        res.render("supplier_dashboard", { request: requests, user: user.dataValues });
 
     });
 

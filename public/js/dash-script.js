@@ -4,9 +4,12 @@ $(document).ready(function () {
     $(".fulfill-btn").on("click", function (event) {
         //see button - grab data-id 
         const id = $(this).data("id");
+        const userid = $(this).data("userid");
+        console.log(userid);
 
         const fulfilledState = {
-            fulfilled: true
+            fulfilled: true,
+            fulfilledBy: userid
         }
 
         console.log(id);

@@ -25,6 +25,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
+        },
+        fulfilledBy: {
+            type: DataTypes.UUID
         }
     }, {
         // disable the modification of tablenames
@@ -34,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
     // associate requests with charities
     Requests.associate = function (models) {
         // requests cannot be created without a charity due to foreign key constraint
-        Requests.belongsTo(models.Charities, {
+        Requests.belongsTo(models.User, {
             foreignKey: {
                 allowNull: true
             }
@@ -42,13 +45,13 @@ module.exports = function (sequelize, DataTypes) {
         // };
 
         // Requests.associate = function (models) {
-
-        //for suppliers who fulfill requests
-        Requests.belongsTo(models.Suppliers, {
-            foreignKey: {
-                allowNull: true
-            }
-        });
+        /*
+                //for suppliers who fulfill requests
+                Requests.belongsTo(models.Suppliers, {
+                    foreignKey: {
+                        allowNull: true
+                    }
+                });*/
     };
 
     return Requests;
