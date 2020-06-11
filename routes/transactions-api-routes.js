@@ -3,6 +3,7 @@ const db = require("../models");
 
 module.exports = function (app) {
 
+    //app.get("/____"), ''''''
     app.get("/reqAll", async function (req, res) {
         const allReq = db.Requests.findAll({
             where: {
@@ -10,6 +11,7 @@ module.exports = function (app) {
             },
             raw: true
         });
+        //res.render("handlebars file name without extension")
         res.render("charity_allReq", { all: allReq });
     })
 
@@ -20,8 +22,18 @@ module.exports = function (app) {
             },
             raw: true
         });
-        res.render("suppliers_allInv", { all: allInv });
+        res.render("supplier_allInv", { all: allInv });
     })
+
+
+    app.get("/charTrans", async function (req, res) {
+        res.render("charity_allTrans");
+    })
+
+    app.get("/suppTrans", async function (req, res) {
+        res.render("supplier_allTrans");
+    })
+
 
     // Get route for retrieving all REQUESTS by UserId CHARITY - posts by current user
     app.get("/api/requests/UserId/:UserId", function (req, res) {

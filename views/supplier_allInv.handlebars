@@ -15,9 +15,9 @@
 
         <nav class="navbar-nav row justify-content-end">
 
-            <a class="nav-item nav-link col btn btn-light btn1" href="/charTrans">See all my Transactions</a>
+            <a class="nav-item nav-link col btn btn-light btn1" href="/suppTrans">See all my Transactions</a>
 
-            <a class="nav-item nav-link col btn btn-light btn2" href="/inventory">Back to Dashboard</a>
+            <a class="nav-item nav-link col btn btn-light btn2" href="/requests">Back to Dashboard</a>
 
             <a class="nav-item nav-link col btn btn-light btn3" href="/">Update Account</a>
 
@@ -31,7 +31,7 @@
         </div>
         <div class="foodav-container col-md-6">
             <div class="author-container">
-                <h1 class="foodav">All Requests</h1>
+                <h1 class="foodav">All Inventory Posts</h1>
                 <table class="table table-bg">
                     <thead>
                         <tr>
@@ -48,11 +48,11 @@
                     <tbody>
                         {{#each all}}
                         <tr>
-                            <td>{{this.r_item}}</td>
-                            <td>{{this.r_amount}}</td>
-                            <td>{{this.r_itemCat}}</td>
-                            <td>{{this.fulfilled}}</td>
-                            <td>{{this.fulfilledBy}}</td>
+                            <td>{{this.s_item}}</td>
+                            <td>{{this.s_amount}}</td>
+                            <td>{{this.s_itemCat}}</td>
+                            <td>{{this.claimed}}</td>
+                            <td>{{this.claimedBy}}</td>
                             <td>{{this.createdAt}}</td>
                             <td>{{> update}} </td>
                             <td>{{> delete}} </td>
