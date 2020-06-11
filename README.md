@@ -51,8 +51,17 @@ With those thoughts and questions in mind, we have developed this web applicatio
 
 ------------------
 ## Screenshots <a name="screenshots"></a>
+First Page: 
+![alt text](https://github.com/ksmera01/Breaking-Bread/public/images/screenshots-breaking-bread_0001.jpg "First Page")
 
+Login: 
+![alt text](https://github.com/ksmera01/Breaking-Bread/public/images/screenshots-breaking-bread_0002.jpg "Login")
 
+Supplier Donations: 
+![alt text](https://github.com/ksmera01/Breaking-Bread/public/images/screenshots-breaking-bread_0000.jpg "Supplier Donations")
+
+Charity Requests: 
+![alt text](https://github.com/ksmera01/Breaking-Bread/public/images/screenshots-breaking-bread_0003.jpg "Charity Requests")
 ------------------
 ## Technologies <a name="technologies"></a>
 
@@ -71,7 +80,7 @@ Describe how to install / setup your local environment / add link to demo versio
 ------------------
 ## Links <a name="links"></a>
 
-* heroku:
+* heroku: [https://breaking-bread-donate.herokuapp.com/](https://breaking-bread-donate.herokuapp.com/)
 * github: [https://github.com/ksmera01/Breaking-Bread](https://github.com/ksmera01/Breaking-Bread)
 
 ------------------
