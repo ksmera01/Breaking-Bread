@@ -9,7 +9,8 @@
 
         <nav class="navbar-nav row justify-content-end">
 
-            <a style="margin-left: 20px" class="nav-item nav-link col btn btn-light btn1" href="/inventory">Back to Dashboard</a>
+            <a style="margin-left: 20px" class="nav-item nav-link col btn btn-light btn1" href="/inventory">Back to
+                Dashboard</a>
 
             <a class="nav-item nav-link col btn btn-light btn2" href="/reqAll">See All Requests</a>
 
@@ -35,6 +36,8 @@
                             <th scope="col">Amount</th>
                             <th scope="col">Category</th>
                             <th scope="col">Supplier Name</th>
+                            <th scope="col">Supplier Contact</th>
+                            <th scope="col">Supplier Address</th>
                             <th scope="col">Claimed or Fulfilled?</th>
                             <th scope="col">Date of Transaction</th>
                         </tr>
@@ -45,7 +48,9 @@
                             <td>{{this.r_item}}</td>
                             <td>{{this.r_amount}}</td>
                             <td>{{this.r_itemCat}}</td>
-                            <td>{{this.DonatedBy}}</td>
+                            <td>{{this.orgName}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.address}}</td>
                             <td>{{this.fulfilledBy}}</td>
                             <td>{{this.createdAt}}</td>
                         </tr>
