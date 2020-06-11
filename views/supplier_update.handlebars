@@ -15,11 +15,11 @@
 
         <nav class="navbar-nav row justify-content-end">
 
-            <a class="nav-item nav-link col btn btn-light btn1" href="/charTrans">See all my Transactions</a>
+            <a class="nav-item nav-link col btn btn-light btn1" href="/requests">Back to Dashboard</a>
 
-            <a class="nav-item nav-link col btn btn-light btn2" href="/inventory">Back to Dashboard</a>
+            <a class="nav-item nav-link col btn btn-light btn2" href="/invAll">See All Requests</a>
 
-            <a class="nav-item nav-link col btn btn-light btn3" href="/charUpdate">Update Account</a>
+            <a class="nav-item nav-link col btn btn-light btn3" href="/suppTrans">See All Transactions</a>
 
         </nav>
     </nav>
@@ -31,18 +31,16 @@
         </div>
         <div class="foodav-container col-md-6">
             <div class="author-container">
-                <h1 class="foodav">All Requests</h1>
+                <h1 class="foodav">Update Information</h1>
                 <table class="table table-bg">
                     <thead>
                         <tr>
-                            <th scope="col">Food Item</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Fulfilled?</th>
-                            <th scope="col">Fulfilled By</th>
-                            <th scope="col">Date Created</th>
-                            <th scope="col">Update</th>
-                            <th scope="col">Delete</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Organization</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Phone Number</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,11 +49,9 @@
                             <td>{{this.r_item}}</td>
                             <td>{{this.r_amount}}</td>
                             <td>{{this.r_itemCat}}</td>
-                            <td>{{this.fulfilled}}</td>
+                            <td>{{this.DonatedBy}}</td>
                             <td>{{this.fulfilledBy}}</td>
                             <td>{{this.createdAt}}</td>
-                            <td>{{> update}} </td>
-                            <td>{{> delete}} </td>
                         </tr>
                         {{/each}}
 
@@ -66,5 +62,4 @@
         </div>
 
     </div>
-</div>
 </div>
