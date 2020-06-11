@@ -38,6 +38,10 @@ module.exports = function (app) {
         res.render("supplier_update");
     })
 
+    app.get("/charUpdate", async function (req, res) {
+        res.render("charity_update");
+    })
+
 
     // Get route for retrieving all REQUESTS by UserId CHARITY - posts by current user
     app.get("/api/requests/UserId/:UserId", function (req, res) {
