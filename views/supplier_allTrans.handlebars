@@ -3,13 +3,14 @@
 
 <div class="container-fluid">
     <nav class="navbar navbar-expand-md">
-     <img class="breadImgMini" src="/images/bread.png" alt="breadImage">
+        <img class="breadImgMini" src="/images/bread.png" alt="breadImage">
 
         <h2 class="navbar-brand" id="bb-menu-header">Breaking Bread</h2>
 
         <nav class="navbar-nav row justify-content-end">
 
-            <a style="margin-left: 20px" class="nav-item nav-link col btn btn-light btn1" href="/requests">Back to Dashboard</a>
+            <a style="margin-left: 20px" class="nav-item nav-link col btn btn-light btn1" href="/requests">Back to
+                Dashboard</a>
 
             <a class="nav-item nav-link col btn btn-light btn2" href="/invAll">See all my posts</a>
 
@@ -35,6 +36,8 @@
                             <th scope="col">Amount</th>
                             <th scope="col">Category</th>
                             <th scope="col">Requester Name</th>
+                            <th scope="col">Requester Contact Info</th>
+                            <th scope="col">Requester Address</th>
                             <th scope="col">Claimed or Fulfilled?</th>
                             <th scope="col">Date of Transaction</th>
                         </tr>
@@ -45,7 +48,9 @@
                             <td>{{this.s_item}}</td>
                             <td>{{this.s_amount}}</td>
                             <td>{{this.s_itemCat}}</td>
-                            <td>{{this.fulfilledBy}}</td>
+                            <td>{{this.orgName}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.address}}</td>
                             <td>{{this.fulfilled}}</td>
                             <td>{{this.createdAt}}</td>
                         </tr>
