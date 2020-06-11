@@ -27,7 +27,7 @@ app.set("view engine", "handlebars");
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-require("./routes/charities-api-routes.js")(app);
+require("./routes/transactions-api-routes.js")(app);
 require("./routes/requests-api-routes.js")(app);
 require("./routes/inventory-api-routes.js")(app);
 

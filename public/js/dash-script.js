@@ -100,6 +100,23 @@ $(document).ready(function () {
             });
         });
 
+        $(".delete-btn").on("click", function (event) {
+            //see button in partials - grab data-ids
+            const id = $(this).data("id");
+
+            // Send the DELETE request.
+            $.ajax("/api/requests/" + id, {
+                type: "DELETE",
+            }).then(
+                function () {
+                    console.log("deleted");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        });
+
+
     });
 
 })
