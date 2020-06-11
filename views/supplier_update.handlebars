@@ -1,65 +1,71 @@
 <script src='/js/dash-script.js'></script>
 
-<div class="navbar-header">
-    <a class="navbar-brand" href="/logout">
-        Logout
-    </a>
-</div>
-
 
 <div class="container-fluid">
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href='/'>
-            <h2>Breaking Bread</h2>
-        </a>
+     <img class="breadImgMini" src="/images/bread.png" alt="breadImage">
+
+        <h2 class="navbar-brand" id="bb-menu-header">Breaking Bread</h2>
+      
 
         <nav class="navbar-nav row justify-content-end">
 
-            <a class="nav-item nav-link col btn btn-light btn1" href="/requests">Back to Dashboard</a>
+            <a style="margin-left: 20px" class="nav-item nav-link col btn btn-light btn1" href="/requests">Back to Dashboard</a>
 
             <a class="nav-item nav-link col btn btn-light btn2" href="/invAll">See All Requests</a>
 
             <a class="nav-item nav-link col btn btn-light btn3" href="/suppTrans">See All Transactions</a>
+
+            <a class="nav-item nav-link col btn btn-light btn-log" href="/logout">Logout</a>
 
         </nav>
     </nav>
 
 
     <div class="row">
-        <div class="container col-md-3">
-            <br>
+        <div class="col d-flex justify-content-center">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Update Information</h1>
+            <form class="signup">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="email-input" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="password-input" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="sel1">Organization Type:</label>
+                    <select class="form-control" id="orgType-input">
+                        <option>Supplier</option>
+                        <option>Requester</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Organization Name</label>
+                    <input type="input" class="form-control" id="orgName-input" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Address</label>
+                    <input type="input" class="form-control" id="orgAdd-input" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contact Name</label>
+                    <input type="input" class="form-control" id="contactName-input" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contact Phone</label>
+                    <input type="input" class="form-control" id="contactPhone-input" placeholder="">
+                </div>
+                <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span> <span class="msg"></span>
+                </div>
+                <button type="submit" style="margin-bottom: 30px" class="btn btn-submit">Update</button>
+            </form>
+            <br />
+            <br />
+           
         </div>
-        <div class="foodav-container col-md-6">
-            <div class="author-container">
-                <h1 class="foodav">Update Information</h1>
-                <table class="table table-bg">
-                    <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Organization</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Password</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Phone Number</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each all}}
-                        <tr>
-                            <td>{{this.r_item}}</td>
-                            <td>{{this.r_amount}}</td>
-                            <td>{{this.r_itemCat}}</td>
-                            <td>{{this.DonatedBy}}</td>
-                            <td>{{this.fulfilledBy}}</td>
-                            <td>{{this.createdAt}}</td>
-                        </tr>
-                        {{/each}}
-
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-    </div>
 </div>

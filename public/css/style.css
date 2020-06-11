@@ -12,6 +12,11 @@ html {
   padding:0px;
   }
 
+  .style-1 {
+    color: #90b7df; 
+    text-decoration: underline;
+}
+
   body {
     font-family: 'Montserrat', sans-serif;
     justify-content: center;
@@ -72,8 +77,19 @@ html {
 .breadImg {
   width: 110px;
   height: 110px;
-  
 }
+
+.breadImgMini {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#bb-menu-header {
+  padding-top: 15px;
+  margin-right: 20px;
+}
+
 #bb-nav {
 margin-top: 20px;
 }
@@ -116,7 +132,16 @@ margin-bottom: 30px;
 
 .btn {
   width: fit-content;
-  margin: 0 30px 0 30px;
+  margin: 0 30px 0 0;
+}
+
+.btn-log {
+  background-color: #f6eecbff;
+}
+
+.btn-log:hover {
+  background-color: #472b02;
+  color: #f6eecbff;
 }
 
 .btn-submit {
