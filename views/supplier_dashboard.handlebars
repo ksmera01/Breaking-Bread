@@ -1,22 +1,29 @@
 <script src='/js/dash-script.js'></script>
 
-<div class="container">
-    <div class="row mt-4">
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-light" href="/">See all Transactions</a>
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-light" href="/">See Inventory</a>
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-light" href="/">Update Account Info</a>
-        </div>
-    </div>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href='/'><h2>Breaking Bread</h2></a>
+
+        <nav class="navbar-nav row justify-content-end">
+
+       
+            <a class="nav-item nav-link col btn btn-light btn1" href="/">See all Transactions</a>
+       
+            <a class="nav-item nav-link col btn btn-light btn1" href="/">See Inventory</a>
+
+      
+            <a class="nav-item nav-link col btn btn-light btn3" href="/">Update Account</a>
+
+        </nav>
+    </nav>
+
+
+    
     <div class="row">
-        <div class="col-md-6">
+         <div class="foodav-container col-md-6">
             <div class="author-container">
-                <h1>What people are asking for</h1>
-                <table class="table">
+                <h1 class="foodav">What people are asking for</h1>
+                <table class="table table-bg">
                     <thead>
                         <tr>
 
@@ -86,7 +93,7 @@
                         </select>
                     </div>
                     <br />
-                    <button type="submit" class="btn btn-success" id="add-req-btn">Submit Request</button>
+                    <button type="submit" class="btn btn-submit" id="add-req-btn">Submit Request</button>
                 </div>
             </form>
         </div>

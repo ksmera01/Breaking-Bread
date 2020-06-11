@@ -2,23 +2,24 @@
 
 <div class="container-fluid">
     <nav class="navbar navbar-expand-md">
-    <nav class="navbar-nav">
-        <div><img src="/public/images/bread.png"></div>
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-light" href="/">See all Transactions</a>
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-light" href="/">See all Requests</a>
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-light" href="/">Update Account Info</a>
-        </div>
+        <a class="navbar-brand" href='/'><h2>Breaking Bread</h2></a>
+            
+        <nav class="navbar-nav row justify-content-end">
+
+            <a class="nav-item nav-link col btn btn-light btn1" href="/">See all Transactions</a>
+     
+            <a class="nav-item nav-link col btn btn-light btn2" href="/">See all Requests</a>
+       
+            <a class="nav-item nav-link col btn btn-light btn3" href="/">Update Account</a>
+            
+        </nav>
     </nav>
-    </nav>
+
+
     <div class="row">
-        <div class="col-md-6">
+        <div class="foodav-container col-md-6">
             <div class="author-container">
-                <h1>Food available</h1>
+                <h1 class="foodav">Food available</h1>
                 <table class="table table-bg">
                     <thead>
                         <tr>
@@ -89,7 +90,7 @@
                         </select>
                     </div>
                     <br />
-                    <button type="submit" class="btn btn-success" id="add-req-btn">Submit Request</button>
+                    <button type="submit" class="btn btn-submit" id="add-req-btn">Submit Request</button>
                 </div>
             </form>
         </div>

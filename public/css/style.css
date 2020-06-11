@@ -6,6 +6,27 @@ html {
     box-sizing: inherit;
   }
 
+  .container {
+  max-width: 1500px;
+  margin: -20px;
+  padding:0px;
+  }
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+ background-color: #f6eecbff;
+}
+
+.scroll {
+  color: #90b7df;
+}
+.scroll-down {
+  background-color: #e7f1fb;
+  padding: 30px;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   justify-content: center;
@@ -13,19 +34,6 @@ body {
   background: #e7f1fb;
   color: #472b02;
   font-size: 12px;
-}
-
-.box {
-color:white;
-text-align: center;
-text-shadow:4px 4px 0 rgba(0,0,0,0.1);
-min-height: 100vh;
-min-width: 100vw;
-display:flex;
-justify-content: space-between;
-align-items: stretch;
-flex-wrap: wrap;
-
 }
 
 h1 {
@@ -36,16 +44,66 @@ h1 {
   margin-bottom: 10px;
 }
 
-p {
-font-family: 'Montserrat', sans-serif;
-color: blue;
+h2 {
+  font-family: 'Comfortaa', cursive;
+  color: #472b02;
+  font-size: 20px;
+}
+
+h1, .foodav {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+h3 {
+  margin-top: 60px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 60px;
+  width: 60vw;
+  height: 60vh;
+  
+}
+
+.login-title {
+  margin-top: 50px;
 }
 
 .table-bg {
-  background-color: cadetblue;
+  background-color: #f8f9fa;
 }
 
+.navbar {
+  margin-top: 10px;
+  margin-bottom: 60px;
+  width: 100vw;
+}
 
 .btn {
-  /* height: 60px; */
+  width: fit-content;
+  margin: 0 30px 0 30px;
+}
+
+.btn-submit {
+  background-color: #f6eecbff;
+}
+
+.btn-submit:hover {
+  background-color: #472b02;
+  color: #f6eecbff;
+}
+
+.foodav-container {
+  background-color: #f8f9fa;
+  padding: 0;
+  border-radius: 15px;
+}
+
+.navbar-nav {
+  width: 100vw;
+}
+
+label {
+  margin-right: 20px;
+  margin-left: 20px;
+  align-content: center;
 }
